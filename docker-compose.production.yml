@@ -15,6 +15,11 @@ services:
     image: giny2015/taski_backend
     restart: always
     env_file: .env
+    command: >
+      sh -c "
+        python manage.py collectstatic --noinput &&
+        gunicorn backend.wsgi:application --bind 0.0.0.0:8000
+      "
     volumes:
       - static:/app/collected_static
       - media:/app/media
