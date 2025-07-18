@@ -12,6 +12,8 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static/static/
+    depends_on:
+      - db
   frontend:
     image: giny2015/taski_frontend  # Качаем с Docker Hub
     env_file: .env
