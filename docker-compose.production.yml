@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   db:
     image: postgres:13.10
@@ -33,3 +35,7 @@ services:
       - static:/staticfiles/
     ports:
       - 8000:80
+
+volumes:
+  pg_data_production:
+  static:
