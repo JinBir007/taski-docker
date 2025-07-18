@@ -16,7 +16,7 @@ services:
     restart: always
     env_file: .env
     volumes:
-      - static:/backend_static
+      - static:/app/static
       - media:/app/media
     expose:
       - 8000
@@ -35,7 +35,7 @@ services:
     image: giny2015/taski_gateway
     env_file: .env
     volumes:
-      - static:/staticfiles/
+      - static:/app/static
       - media:/app/media
     ports:
       - 8000:80
